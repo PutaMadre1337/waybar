@@ -38,6 +38,7 @@
   ],
   "modules-right": [
     "custom/padd",
+    "custom/weather",
     "custom/l_end",
     "mpris",
     "pulseaudio",
@@ -81,13 +82,13 @@
     "format": "Submap: {}",
     "default-submap": "None",
     "always-on": true,
-    "tooltip": false,
+    "tooltip": false
   },
   "memory": {
     "states": {
       "c": 90, // critical
       "h": 60, // high
-      "m": 30, // medium
+      "m": 30 // medium
     },
     "interval": 30,
     "format": "󰾆 {used}GB",
@@ -185,7 +186,6 @@
     "all-outputs": true,
     "active-only": false,
     "on-click": "activate",
-    "disable-scroll": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "persistent-workspaces": {},
@@ -203,16 +203,16 @@
       "7": "VII",
       "8": "VIII",
       "9": "IX",
-      "10": "X",
-    },
+      "10": "X"
+    }
   },
   "hyprland/window": {
-    "format": "  ",
+    "format": "  "
   },
   "hyprland/language": {
     "format": "{long} {variant}",
     "rotate": 0,
-    "on-click": "keyboardswitch.sh",
+    "on-click": "keyboardswitch.sh"
     // 
   },
   "mpris": {
@@ -231,7 +231,7 @@
     "interval": 1
   },
   "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon}  {volume}",
     "rotate": 0,
     "format-muted": "婢",
     "on-click": "pavucontrol -t 3",
@@ -275,7 +275,7 @@
     "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
     "interval": 86400, // once every day
     "tooltip": true,
-    "signal": 20,
+    "signal": 20
   },
   "privacy": {
     "icon-size": 12,
@@ -303,6 +303,11 @@
     "on-click-middle": "sleep 0.1 && cliphist.sh w",
     "interval": 86400, // once every day
     "tooltip": true
+  },
+  "custom/weather": {
+    "tooltip": false,
+    "exec": "curl $PIPISKA",
+    "interval": 800
   },
   "custom/power": {
     "format": "{}",
